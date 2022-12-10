@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\back.png" />
+    <None Remove="Assets\icon.ico" />
+    <None Remove="Assets\PNGLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\back.png" />
+    <Resource Include="Assets\icon.ico" />
+    <Resource Include="Assets\PNGLogo.png" />
+  </ItemGroup>
+
+</Project>
