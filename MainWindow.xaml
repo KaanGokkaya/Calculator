@@ -308,7 +308,7 @@
             CornerRadius="10,10,10,10"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
-            Margin="364,387,0,0" ContextMenuClosing="txt_minus_Clicked">
+            Margin="364,387,0,0">
             <Button
                 x:Name="btn_minus"
                 Background="Transparent"
@@ -322,7 +322,7 @@
                 FontSize="40"
                 FontWeight="Bold"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center">
+                HorizontalContentAlignment="Center" Click="btn_minus_Clicked">
                 -
             </Button>
         </Border>
@@ -472,7 +472,7 @@
                 FontSize="25"
                 FontWeight="Bold"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center">
+                HorizontalContentAlignment="Center" Click="btn_equal_Clicked">
                 =
             </Button>
         </Border>

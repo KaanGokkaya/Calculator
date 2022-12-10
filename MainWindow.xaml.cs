@@ -19,6 +19,7 @@ namespace Calculator
     {
 
         int first = 0, second = 0;
+        decimal result = 0;
         string calculation = "";
 
         public MainWindow()
@@ -30,6 +31,7 @@ namespace Calculator
         {
             txtBox_Calcu.Text = "";
             txtBox_Result.Text = "";
+            first = 0;
         }
 
         private void btn_divide_Clicked(object sender, RoutedEventArgs e)
@@ -114,6 +116,25 @@ namespace Calculator
 
         private void txt_minus_Clicked(object sender, ContextMenuEventArgs e)
         {
+        }
+
+        private void btn_plus_Clicked(object sender, RoutedEventArgs e)
+        {
+            if ((!(txtBox_Result.Text == "")) && first == 0)
+            {
+                first = Convert.ToInt32(txtBox_Result.Text);
+                calculation = "plus";
+                txtBox_Calcu.Text = txtBox_Result.Text + " + ";
+                txtBox_Result.Text = "";
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btn_minus_Clicked(object sender, RoutedEventArgs e)
+        {
             if ((!(txtBox_Result.Text == "")) && first == 0)
             {
                 first = Convert.ToInt32(txtBox_Result.Text);
@@ -127,9 +148,41 @@ namespace Calculator
             }
         }
 
-        private void btn_plus_Clicked(object sender, RoutedEventArgs e)
+        private void btn_equal_Clicked(object sender, RoutedEventArgs e)
         {
+            if(calculation == "divide")
+            {
+                second = Convert.ToInt32(txtBox_Result.Text);
+                txtBox_Calcu.Text = txtBox_Calcu.Text + second + " = ";
+                result = first / second;
+                txtBox_Result.Text = result.ToString();
+            }
+            else if(calculation == "minus")
+            {
+                second = Convert.ToInt32(txtBox_Result.Text);
+                txtBox_Calcu.Text = txtBox_Calcu.Text + second + " = ";
+                result = first - second;
+                txtBox_Result.Text = result.ToString();
+            }
+            else if(calculation == "plus")
+            {
+                second = Convert.ToInt32(txtBox_Result.Text);
+                txtBox_Calcu.Text = txtBox_Calcu.Text + second + " = ";
+                result = first + second;
+                txtBox_Result.Text = result.ToString();
+            }
+            else if(calculation == "multiple")
+            {
+                second = Convert.ToInt32(txtBox_Result.Text);
+                txtBox_Calcu.Text = txtBox_Calcu.Text + second + " = ";
+                result = first * second;
+                txtBox_Result.Text = result.ToString();
+            }
+            else if(first == 0 && calculation == "")
+            {
 
+            }
+            result = 0;
         }
 
         private void btn_back_Clicked(object sender, RoutedEventArgs e)
@@ -138,6 +191,7 @@ namespace Calculator
             {
                 txtBox_Result.Text = txtBox_Calcu.Text.Substring(0, txtBox_Calcu.Text.Length - 3);
                 txtBox_Calcu.Text = "";
+                first = 0;
             }
             else
             {
